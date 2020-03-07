@@ -3,6 +3,7 @@ package com.cv5.miprimeraaplicacion;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -45,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
 
 
         listView.setAdapter(miArrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                Toast.makeText(MainActivity.this,  miArraylist.get(position), Toast.LENGTH_SHORT).show();
+
+
+
+            }
+        });
 
     }
 
